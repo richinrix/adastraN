@@ -63,7 +63,7 @@ const ProductsDisplay = () => {
         <a href={`/products/${product.productId}`} className="mx-4">
           <img
             src={product.image}
-            className="w-full hover:opacity-75 duration-150 ease-linear md:w-auto md:h-[340px] my-8 border-[5px] border-astra-slate "
+            className="w-full hover:opacity-75 duration-150 ease-linear md:w-auto md:h-[340px] my-8 border-[2px] border-astra-slate "
             alt=""
           />
         </a>

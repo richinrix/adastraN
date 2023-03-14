@@ -4,7 +4,8 @@ import $ from "jquery";
 import { HiMenuAlt1, HiMenu } from "react-icons/hi";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { HiOutlineMail } from "react-icons/hi";
-import { BsSignal } from "react-icons/bs";
+import { BsWhatsapp } from "react-icons/bs";
+import Switcher from "./Switcher";
 // logo
 const Logo1 = "/assets/LOGOS/logow-wbg.jpg";
 const Nav = () => {
@@ -50,22 +51,29 @@ const Nav = () => {
           />
         </a>
         <div class="flex text-black">
-          {/* options */}
-
           <div class="flex text-xl">
             {navOptions.map((option) => (
               <a
-                className="mx-5 border-b-2 border-white hover:border-astra-slate hover:text-black"
+                className={`mx-5 border-b-2  hover:border-astra-slate py-1 hover:text-black ${
+                  router.asPath == option.link
+                    ? " border-black"
+                    : "border-white"
+                }`}
                 href={`${option.link}`}
               >
                 {option.name}
+                {console.log(
+                  option.link,
+                  router.asPath,
+                  router.asPath == option.link
+                )}
               </a>
             ))}
           </div>
           {/* socials */}
           <div className="flex items-center text-2xl ml-2">
             <a href="">
-              <BsSignal className="text-astra-slate hover:text-black mx-2" />
+              <BsWhatsapp className="text-xl text-astra-slate hover:text-black mx-2" />
             </a>
             <a href="">
               <AiOutlineInstagram className="text-astra-slate hover:text-black mx-2" />
@@ -75,6 +83,9 @@ const Nav = () => {
             </a>
           </div>
         </div>
+        {/* <div class="px-3">
+          <Switcher />
+        </div> */}
       </div>
       {/* mobile navbar */}
       <div className="md:hidden   overflow-hidden p-3 top-0 fixed z-50 w-full flex justify-between items-center h-auto text-black bg-white">
@@ -97,7 +108,7 @@ const Nav = () => {
           ))}
           <div className="flex items-center text-4xl ml-2">
             <a href="">
-              <BsSignal className="text-astra-slate hover:text-black mx-5" />
+              <BsWhatsapp className="text-3xl text-astra-slate hover:text-black mx-5" />
             </a>
             <a href="">
               <AiOutlineInstagram className="text-astra-slate hover:text-black mx-5" />
