@@ -48,7 +48,7 @@ const ProductsDisplay = () => {
       productId: 1304,
       name: "Dessicated Coconut Powder",
       description: " Description",
-      image: "/assets/products/AdAstra_HEX_BBQ_Box.jpg",
+      image: "/assets/products/AdAstra_Single_BBQ_Box.jpg",
     },
     {
       productId: 1314,
