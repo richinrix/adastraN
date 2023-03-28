@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,7 +8,8 @@
   src: url(./fonts//ZuumeBold.ttf);
 }
 .font-zuumeB{
-  font-family: ZuumeBold;
+  /* font-family: ZuumeBold; */
+  font-family: 'Montserrat', sans-serif;
 }
 
 @font-face {
@@ -14,9 +17,10 @@
   src: url(./fonts//ZuumeRegular.ttf);
 }
 .font-zuume{
-  font-family: Zuume;
-}
+  /* font-family: Zuume; */
+  font-family: 'Montserrat', sans-serif;
 
+}
 .PhoneInput>input{
   padding: 6px;
   outline: none;
@@ -24,3 +28,27 @@
 .contact-page-phoneinput>input{
   background-color: #545454;
 }
+
+
+/*  arrow stuff*/
+/* heading and content font staandards zoomin */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

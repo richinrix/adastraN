@@ -2,9 +2,30 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import React, { useState, useEffect } from "react";
 const inter = Inter({ subsets: ["latin"] });
 import ProductsDisplay from "@/components/ProductsDisplay";
+import { getProducts } from "@/services";
+import { useRouter } from "next/router";
+
 export default function Home() {
+  const [products, setProducts] = useState([]);
+
+  const fetchProducts = async () => {
+    const products = await getProducts();
+    setProducts(products);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+  const router = useRouter();
+  const { id } = router.query;
+  useEffect(() => {
+    console.log(router.isReady);
+    // if (router.isReady) fetchProduct();
+    if (router.isReady) console.log(router.query.id);
+  }, []);
   return (
     <div className=" min-h-full bg-white ">
       <Head>
@@ -13,7 +34,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ProductsDisplay />
+      {/* banner with cta */}
+      <ProductsDisplay products={products} />
     </div>
   );
 }

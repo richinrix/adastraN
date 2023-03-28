@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProductsDisplay from "@/components/ProductsDisplay";
 import Head from "next/head";
+import { getProducts } from "@/services";
 const index = () => {
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [search, setSearch] = useState("");
+  const fetchProducts = async () => {
+    const products = await getProducts();
+    setProducts(products);
+    // console.log(products);
+    setFilteredProducts(products);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+  useEffect(() => {
+    setFilteredProducts(
+      products.filter((product) =>
+        product.productName.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search]);
+
   return (
     <div className=" min-h-full bg-white ">
       <Head>
@@ -10,7 +32,16 @@ const index = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ProductsDisplay />
+      {/* search bar */}
+      <div class="flex items-center justify-center my-4 px-5 mt-20 md:mt-0">
+        <input
+          type="text"
+          placeholder="Search for products"
+          onChange={(e) => setSearch(e.target.value)}
+          class="px-8 py-2 w-full md:w-[500px] rounded-r-full rounded-l-full border-2 outline-none border-black"
+        />
+      </div>
+      <ProductsDisplay products={filteredProducts} />
     </div>
   );
 };

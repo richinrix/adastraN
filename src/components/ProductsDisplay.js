@@ -1,7 +1,9 @@
 import React from "react";
 
-const ProductsDisplay = () => {
-  const products = [
+const ProductsDisplay = ({ products }) => {
+  console.log(products);
+  // products.map((product) => console.log(product));
+  const productsdev = [
     {
       productId: 1234,
       name: "Dessicated Coconut Powder",
@@ -59,21 +61,22 @@ const ProductsDisplay = () => {
   ];
   return (
     <div className="flex flex-wrap  w-full h-full justify-center md:justify-between items-center py-8 px-5 md:px-0 ">
-      {products.map((product) => (
-        <a href={`/products/${product.productId}`} className="mx-4">
-          <img
-            src={product.image}
-            className="w-full hover:opacity-75 duration-150 ease-linear md:w-auto md:h-[340px] my-8 border-[2px] border-astra-slate "
-            alt=""
-          />
-        </a>
-        // <div
-        //   class=" h-[288px] min-w-[288px]  max-w-full col-span-1 bg-cover bg-center border-4 border-astra-slate mx-auto my-auto"
-        //   style={{
-        //     backgroundImage: `url(${product.image})`,
-        //   }}
-        // />
-      ))}
+      {products.length !== 0 &&
+        products.map((product) => (
+          <a href={`/products/${product.id}`} className="mx-4">
+            <img
+              src={product.image1.url}
+              className="w-full hover:opacity-75 duration-150 ease-linear md:w-auto md:h-[340px] my-8 border-[2px] border-astra-slate "
+              alt=""
+            />
+          </a>
+          // <div
+          //   class=" h-[288px] min-w-[288px]  max-w-full col-span-1 bg-cover bg-center border-4 border-astra-slate mx-auto my-auto"
+          //   style={{
+          //     backgroundImage: `url(${product.image})`,
+          //   }}
+          // />
+        ))}
     </div>
   );
 };

@@ -62,11 +62,11 @@ const Nav = () => {
                 href={`${option.link}`}
               >
                 {option.name}
-                {console.log(
+                {/* {console.log(
                   option.link,
                   router.asPath,
                   router.asPath == option.link
-                )}
+                )} */}
               </a>
             ))}
           </div>
@@ -116,6 +116,7 @@ const Nav = () => {
             <a href="">
               <HiOutlineMail className="text-astra-slate hover:text-black mx-5" />
             </a>
+            {/* linkedIN */}
           </div>
         </nav>
         <button onClick={handleToggle} className="z-50 flex " id="sideButton">
