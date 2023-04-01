@@ -20,12 +20,17 @@ export const getProducts = async () => {
   const query = gql`
     query Products {
       products {
-        id
-        productName
-        slug
         image1 {
           url
         }
+        image2 {
+          url
+        }
+        image3 {
+          url
+        }
+        id
+        productName
       }
     }
   `;
@@ -70,7 +75,27 @@ export const getProduct = async (id) => {
   //     query,
   //     { id }
   //   );
-  console.log(id);
+  // console.log(id);
   //   console.log(result.product);
   //   return result.product;
+};
+
+// creating contact
+export const createContact = async (contact) => {
+  const query = gql`
+    mutation createContact($contact: ContactCreateInput!) {
+      createContact(data: $contact) {
+        name
+        mail
+        phoneNumber
+        helpOptions
+      }
+    }
+  `;
+  const result = await request(
+    "https://api-ap-south-1.hygraph.com/v2/clff1o5m61jhz01te56nl9ub4/master",
+    query,
+    { contact }
+  );
+  return result;
 };

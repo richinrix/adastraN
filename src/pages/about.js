@@ -1,11 +1,15 @@
 import React from "react";
-const image1 = "/assets/images/AdAstra_Container.jpg";
+const image1 = "/assets/images/AdAstra_Pole_Sign.jpg";
+const image3 = "/assets/images/AdAstra_Container2.jpg";
+
+const image2 = "/assets/images/AdAstra_Outdoor_Billboard.jpg";
+
 const about = () => {
   return (
-    <div class="px-5 md:px-0 mt-20">
+    <div class="px-5 md:px-12 mt-20">
+      <div class="text-xl md:text-4xl font-bold">About us</div>
       <div class="flex md:flex-row items-center flex-col-reverse w-full">
         <div className=" md:pr-8 ">
-          <div class="text-xl md:text-4xl">About us</div>
           <div class="pt-5 md:pt-6 md:text-xl">
             As an export company, we take great pride in our ability to connect
             businesses with new markets around the world. Our team is dedicated
@@ -19,6 +23,25 @@ const about = () => {
             operations, we are here to help.
             <br />
             <br />
+          </div>
+        </div>
+        {/* <div
+          class="bg-contain  bg-center bg-no-repeat w-full md:w-[500px]"
+          style={{
+            backgroundImage: `url(${image1})`,
+          }}
+        ></div> */}
+        <img
+          class=" object-contain  object-center object-no-repeat w-full md:h-[400px] md:w-[600px]"
+          src={image2}
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div class="flex md:flex-row-reverse items-center flex-col-reverse w-full my-3 md:mt-8">
+        <div className=" md:pl-8 ">
+          <div class="pt-5 md:pt-6 md:text-xl">
+            {" "}
             At AdAstra, we understand the importance of quality and reliability.
             That's why we only work with trusted suppliers and logistics
             partners to ensure that every shipment arrives on time and in
@@ -35,23 +58,31 @@ const about = () => {
             support and guidance you need to succeed in today's global
             marketplace.
             <br />
-            <br />
+          </div>
+        </div>
+        <img
+          class=" object-cover  object-center object-no-repeat w-full md:h-[400px] md:w-[500px]"
+          src={image1}
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div class="flex md:flex-row items-center flex-col-reverse w-full my-3 md:mt-8">
+        <div className=" md:pr-8 ">
+          <div class="pt-5 md:pt-6 md:text-xl">
             Whether you are a small business looking to export your products for
             the first time, or a large corporation seeking to optimize your
             export operations, we are here to help you achieve your goals.
             Contact us today to learn more about our export services and how we
             can help you grow your business on a global scale.
+            <br />
+            <br />
           </div>
         </div>
-        {/* <div
-          class="bg-contain  bg-center bg-no-repeat w-full md:w-[500px]"
-          style={{
-            backgroundImage: `url(${image1})`,
-          }}
-        ></div> */}
+
         <img
-          class=" object-contain  object-center object-no-repeat w-full md:h-[400px] md:w-[300px]"
-          src={image1}
+          class=" object-contain  object-center object-no-repeat w-full md:h-[400px] md:w-[600px]"
+          src={image3}
           alt=""
           srcset=""
         />

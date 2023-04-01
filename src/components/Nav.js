@@ -5,9 +5,11 @@ import { HiMenuAlt1, HiMenu } from "react-icons/hi";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsWhatsapp } from "react-icons/bs";
+import { CiLinkedin } from "react-icons/ci";
 import Switcher from "./Switcher";
 // logo
-const Logo1 = "/assets/LOGOS/logow-wbg.jpg";
+const Logo1 = "/assets/LOGOS/logo-beige.png";
+const Logo2 = "/assets/LOGOS/logow-wbg.jpg";
 const Nav = () => {
   const router = useRouter();
   const navOptions = [
@@ -39,7 +41,7 @@ const Nav = () => {
     $("#sideMenu").addClass("translate-x-full");
   };
   return (
-    <div>
+    <div className="md:px-9 ">
       {/* desktop nav */}
       <div className="hidden md:flex items-center justify-between py-4 ">
         <a href="/" className="">
@@ -56,8 +58,8 @@ const Nav = () => {
               <a
                 className={`mx-5 border-b-2  hover:border-astra-slate py-1 hover:text-black ${
                   router.asPath == option.link
-                    ? " border-black"
-                    : "border-white"
+                    ? " border-astra-darkBeige"
+                    : "border-white border-opacity-0"
                 }`}
                 href={`${option.link}`}
               >
@@ -72,13 +74,16 @@ const Nav = () => {
           </div>
           {/* socials */}
           <div className="flex items-center text-2xl ml-2">
-            <a href="">
+            <a href="https://wa.me/message/MO52YNXKGYKUO1" target="_blank">
               <BsWhatsapp className="text-xl text-astra-slate hover:text-black mx-2" />
             </a>
-            <a href="">
+            <a href="https://instagram.com/adastra_exim?igshid=ZDdkNTZiNTM=">
               <AiOutlineInstagram className="text-astra-slate hover:text-black mx-2" />
             </a>
-            <a href="">
+            <a href="www.linkedin.com/company/adastraexim/" target="_blank">
+              <CiLinkedin className="text-astra-slate hover:text-black mx-2" />
+            </a>
+            <a href="mailto:support@adastraexim.com">
               <HiOutlineMail className="text-astra-slate hover:text-black mx-2" />
             </a>
           </div>
@@ -93,13 +98,13 @@ const Nav = () => {
           <div
             className=" w-16 h-10 bg-contain bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('${Logo1}')`,
+              backgroundImage: `url('${Logo2}')`,
             }}
           />
         </a>
         <nav
           id="sideMenu"
-          className="text-xl sideMenu fixed p-36 text-center bg-white inset-y-0 right-0 transform transition items-center translate-x-full duration-500 ease-in-out uppercase min-h-screen w-full flex z-10 flex-col justify-around min-w-screen "
+          className="text-xl sideMenu fixed p-36 text-center  bg-astra-lightBeige inset-y-0 right-0 transform transition items-center translate-x-full duration-500 ease-in-out uppercase min-h-screen w-full flex z-10 flex-col justify-around min-w-screen "
         >
           {navOptions.map((value, key) => (
             <div key={key} className=" text-center w-96" onClick={resize}>
@@ -107,16 +112,18 @@ const Nav = () => {
             </div>
           ))}
           <div className="flex items-center text-4xl ml-2">
-            <a href="">
-              <BsWhatsapp className="text-3xl text-astra-slate hover:text-black mx-5" />
+            <a href="https://wa.me/message/MO52YNXKGYKUO1" target="_blank">
+              <BsWhatsapp className="text-astra-slate text-3xl hover:text-black mx-5" />
             </a>
-            <a href="">
+            <a href="https://instagram.com/adastra_exim?igshid=ZDdkNTZiNTM=">
               <AiOutlineInstagram className="text-astra-slate hover:text-black mx-5" />
             </a>
-            <a href="">
+            <a href="www.linkedin.com/company/adastraexim/" target="_blank">
+              <CiLinkedin className="text-astra-slate hover:text-black mx-5" />
+            </a>
+            <a href="mailto:support@adastraexim.com">
               <HiOutlineMail className="text-astra-slate hover:text-black mx-5" />
             </a>
-            {/* linkedIN */}
           </div>
         </nav>
         <button onClick={handleToggle} className="z-50 flex " id="sideButton">

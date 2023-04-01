@@ -37,6 +37,10 @@ module.exports = {
       astra: {
         powder: "#fbfcf7",
         slate: "#545454",
+        bone: "#e3dac9",
+        darkBeige: "#806C51",
+        darkBeige2: "#5B4B3A",
+        lightBeige: "#e3dac9",
       },
     },
     fontFamily: {
