@@ -1,6 +1,6 @@
 import React from "react";
 const image = "/assets/images/productpage.png";
-const index = () => {
+const product = () => {
   return (
     <div className="md:py-0 pt-8">
       <img
@@ -12,4 +12,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default product;
